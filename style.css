@@ -179,11 +179,21 @@ section.full-height{
 
 #sidebar ul li a{
     color: var(--color-heading);
+    transition: all 1s ease;
 }
 
 #sidebar ul li a.is-active,
 #sidebar ul li a:hover{
+    font-weight: 600;
     color: var(--color-brand);
+}
+
+ul .divider {
+    display: block;
+    width: 100%; /* Full width divider */
+    height: 2px; /* Height of the line */
+    background-color: var(--color-brand); /* White line */
+    margin: 20px 0; /* Space around the divider */
 }
 
 .burger{
@@ -258,3 +268,4 @@ section.full-height{
     margin-top: 1.8rem;
     margin-bottom: 3.4rem;
 }
+
