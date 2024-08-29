@@ -1,2 +1,2 @@
-# MohamedArafath.github.io
+# MohamedArafath
 My Personal Portfolio
