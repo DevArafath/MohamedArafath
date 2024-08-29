@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --font-base: "Bai Jamjuree";
+    --border-radius: 1.2rem;
+    --border-radius-lg: 2.4rem;
+
+    --color-bg: rgb(23, 61, 23);
+    --color-bg2: rgb(47, 98, 47);
+    --color-brand: rgb(255, 208, 103);
+    --color-brand2: rgb(255, 168, 70);
+    --sidebar-rgb: 0, 26, 0;
+    --color-body: rgb(168, 209, 168);
+    --color-heading: rgb(211, 235, 211);
+}
+
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    line-height: 1.5;
+    font-family: var(--font-base), sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    color: var(--color-heading);
+    text-transform: uppercase;
+}
+
+.heading-1{
+    font-size: clamp(4.4rem, 6vw, 6.4rem);
+}
+
+.heading-2{
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
+}
+
+.heading-3{
+    font-size: 1.8rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-brand);
+    transition: all 0.5s ease;
+}
+
+a:hover{
+    color:var(--color-brand2)
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+/* Sidebar */
+#sidebar {
+    min-height: 100vh;
+    width: 24rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(var(--sidebar-rgb), 0.4),rgba(var(--sidebar-rgb), 0.8)), url('./img/sidebar.png');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: grid; 
+    align-content: center;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+#sidebar .profile{
+    margin-bottom: 2.5rem;
+}
+
+#sidebar .profile_name{
+    background-color: var(--color-bg);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#sidebar .profile img{
+    border-radius: var(--border-radius-lg);
+    width: 17rem;
+    margin-bottom: 1.5rem;
+}
+
+#sidebar ul{
+    text-transform: uppercase;
+    display: grid;
+    gap: 1.2rem;
+}
+
+#sidebar ul li a{
+    color: var(--color-heading);
+}
+
+#sidebar ul li a.is-active,
+#sidebar ul li a:hover{
+    color: var(--color-brand);
+}
