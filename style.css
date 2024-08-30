@@ -266,6 +266,15 @@ ul .divider {
     margin: 20px 0; /* Space around the divider */
 }
 
+#sidebar .made-by-text{
+    color: var(--color-brand);
+    font-size: 10px;
+}
+
+.made-by-text .heart{
+    color: red;
+}
+
 .burger{
     width: 6.4rem;
     height: 6.4rem;
