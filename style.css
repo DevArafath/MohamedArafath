@@ -101,7 +101,14 @@ section.full-height{
 
 .section-title{
     text-align: center;
-    padding: 25px;
+}
+
+.section-line {
+    width: 500px;
+    height: 5px; /* Adjust the thickness of the line */
+    background-color: #FFD700; /* Dark yellow color */
+    margin: auto; /* Space above and below the line */
+    margin-bottom: 20px;
 }
 
 .section-subtitle{
@@ -300,6 +307,7 @@ ul .divider {
     transition: all 1.5s ease;
 }
 
+/* Mobile Screen Setttings CSS */
 @media screen and (max-width:992px) {
     #sidebar{
         left: -24rem;
@@ -315,6 +323,14 @@ ul .divider {
 
     #content-wrapper{
         padding-left: 0;
+    }
+
+    .section-line {
+        width: 250px;
+        height: 5px; /* Adjust the thickness of the line */
+        background-color: #FFD700; /* Dark yellow color */
+        margin: auto; /* Space above and below the line */
+        margin-bottom: 20px;
     }
 }
 
@@ -487,7 +503,7 @@ ul .divider {
     }
 
     .timeline-line {
-        left: 31px;
+        left: 15%; /* Adjust this value as needed */
     }
 
     .container-work {
