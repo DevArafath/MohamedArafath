@@ -99,6 +99,17 @@ section.full-height{
     align-content: center;
 }
 
+.section-title{
+    text-align: center;
+    padding: 25px;
+}
+
+.section-subtitle{
+    margin: auto;
+    text-align: center;
+    max-width: 750px;
+}
+
 .btn{
     padding: 1.2rem 2.4rem;
     background-color: var(--color-brand);
@@ -114,12 +125,14 @@ section.full-height{
     color: var(--color-bg2);
 }
 
-.social-links{
+/* Social Icons in Home Page */
+.social-links {
     display: flex;
     gap: 0.8rem;
+    position: relative; /* Ensure the parent has positioning context */
 }
 
-.social-links a{
+.social-links a {
     width: 4.4rem;
     height: 4.4rem;
     display: grid;
@@ -129,11 +142,61 @@ section.full-height{
     text-align: center;
     border-radius: var(--border-radius);
     font-size: 2.5rem;
+    position: relative; /* Ensure the tooltip is positioned relative to this element */
 }
 
-.social-links a:hover{
-    background-color: var(--color-brand);
-    color: var(--color-bg2);
+.social-links a:hover {
+    background-color: var(--social-color);
+    color: white;
+}
+
+/* Tool Tips for Links */
+.social-links a::before {
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--social-color);
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 0.1rem 1rem;
+    border-radius: var(--border-radius);
+    bottom: 50%; /* Position the tooltip above the link */
+    left: 50%; /* Align the tooltip to the center of the link */
+    transform: translateX(-50%) rotate(25deg); /* Center the tooltip horizontally */
+    white-space: nowrap; /* Prevent text from wrapping */
+    opacity: 0; /* Hide tooltip initially */
+    pointer-events: none; /* Disable pointer events for the tooltip */
+    transition:  200ms cubic-bezier(.58,-0.01,.26,1.72);
+}
+
+.social-links a::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--social-color);
+    bottom: 50%;
+    left: 50%; 
+    transform: translateX(-50%) rotate(25deg);
+    opacity: 0;
+    transition:  200ms cubic-bezier(.58,-0.01,.26,1.72);
+}
+
+/* Show tooltip on hover */
+.social-links a:hover::before {
+    bottom: 120%; /* Position the tooltip above the link */
+    left: 50%; /* Align the tooltip to the center of the link */
+    transform: translateX(-50%) rotate(0);
+    opacity: 1; /* Show the tooltip on hover */
+}
+
+.social-links a:hover::after{
+    bottom: 100%;
+    left: 50%; 
+    transform: translateX(-50%);
+    opacity: 1;
 }
 
 /* Sidebar */
@@ -269,3 +332,154 @@ ul .divider {
     margin-bottom: 3.4rem;
 }
 
+/* Work Experience CSS */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+/* The vertical line inside the timeline */
+.timeline-line {
+    position: absolute;
+    width: 6px;
+    height: 0; /* Start with height 0 */
+    background: #fff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    transition: height 1s ease-in-out; /* Animate height */
+}
+
+/* Class to trigger the animation */
+.timeline.animate-line .timeline-line {
+    height: 100%; /* Final height when animation is triggered */
+}
+
+
+
+/* When animation class is added */
+.timeline.animate-line .timeline-line {
+    height: 100%; /* The final state when the animation is triggered */
+}
+
+.container-work{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+}
+
+.container-work .work-text-box{
+    padding: 20px 30px;
+    background: #ececec;
+    position: relative;
+    border-radius: var(--border-radius);
+}
+
+.container-work .work-place{
+    font-size: 30px;
+    color: var(--color-bg);
+    margin-bottom: 0;
+}
+
+.container-work .work-position{
+    color: var(--color-bg2);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.container-work small{
+    display: inline-block;
+    color: var(--color-bg);
+}
+
+.container-work .work-details{
+    margin-top: 15px;
+    color: #000;
+}
+
+.left-container{
+    left: 0;
+}
+
+.right-container{
+    left: 50%;
+}
+
+.container-work img{
+    position: absolute;
+    width: 70px;
+    border-radius: 50%;
+    right: -35px;
+    top: 32px;
+    z-index: 10;
+}
+
+.right-container img{
+    left: -35px;
+}
+
+.left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #ececec;
+    right: -15px;
+}
+
+.right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #ececec;
+    left: -15px;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline {
+        margin: 50px auto;
+    }
+
+    .timeline-line {
+        left: 31px;
+    }
+
+    .container-work {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    .work-text-box{
+        font-size: 12px;
+    }
+
+    .work-text-box small{
+        margin-bottom: 10px;
+    }
+
+    .right-container{
+        left: 0;
+    }
+
+    .left-container img,
+    .right-container img{
+        left: 2px;
+    }
+
+    .left-container-arrow,
+    .right-container-arrow{
+        border-right:  15px solid #ececec;
+        border-left: 0;
+        left: -10px;
+    }
+}

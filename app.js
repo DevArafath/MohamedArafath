@@ -39,3 +39,33 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Initialize AOS
+document.addEventListener("DOMContentLoaded", function () {
+    AOS.init();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the timeline element
+    const timeline = document.querySelector('.timeline');
+
+    // Create an Intersection Observer instance
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add class to trigger animation
+                timeline.classList.add('animate-line');
+            } else {
+                // Optionally remove class to reset animation
+                timeline.classList.remove('animate-line');
+            }
+        });
+    }, {
+        threshold: 0.5 // Adjust this threshold based on when you want the animation to trigger
+    });
+
+    // Observe the timeline element
+    observer.observe(timeline);
+});
+
+
