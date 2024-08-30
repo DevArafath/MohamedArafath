@@ -357,8 +357,6 @@ ul .divider {
     height: 100%; /* Final height when animation is triggered */
 }
 
-
-
 /* When animation class is added */
 .timeline.animate-line .timeline-line {
     height: 100%; /* The final state when the animation is triggered */
@@ -394,9 +392,48 @@ ul .divider {
     color: var(--color-bg);
 }
 
-.container-work .work-details{
-    margin-top: 15px;
-    color: #000;
+.work-details {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.work-details .primary-subtitle {
+    font-weight: bold; /* Bold text for primary subtitle */
+    font-size: 18px; /* Larger font size for emphasis */
+    margin-bottom: 10px; /* Space below primary subtitle */
+    color: #333; /* Primary subtitle color */
+    position: relative;
+    padding-left: 0px; /* Space for bullets */
+}
+
+.work-details .primary-subtitle::before {
+    content: ""; /* No bullet for primary subtitle */
+}
+
+.secondary-details {
+    text-decoration: none;
+    list-style: none; /* Remove default list styling */
+    padding-left: 0px; /* Indent secondary items */
+    margin: 0; /* Remove default margin */
+}
+
+.secondary-details li {
+    position: relative;
+    padding-left: 20px; /* Space for bullets */
+    margin-bottom: 5px; /* Space between secondary items */
+    font-size: 12px; /* Adjust font size for readability */
+    line-height: 1.5; /* Improve readability */
+    text-decoration: none;
+}
+
+.secondary-details li::before {
+    content: "• "; /* Bullet symbol */
+    color: var(--color-brand); /* Bullet color */
+    font-weight: bold; /* Bullet weight */
+    position: absolute;
+    left: 0; /* Align bullet to the left */
+    top: 0; /* Align bullet with the text */
 }
 
 .left-container{
