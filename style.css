@@ -45,7 +45,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .heading-2{
-    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    font-size: clamp(3.2rem, 4vw, 4.2rem);
 }
 
 .heading-3{
@@ -97,6 +97,7 @@ section.full-height{
     min-height: 100vh;
     display: grid;
     align-content: center;
+    padding: 8rem 0;
 }
 
 .section-title{
@@ -360,6 +361,78 @@ ul .divider {
     max-width: 90rem;
     margin-top: 1.8rem;
     margin-bottom: 3.4rem;
+}
+
+/* Services sub section------------------------------------------------------------------------------------------------------------------------------------------ */
+.intro{
+    margin-bottom: 3.2rem;
+}
+
+.grid{
+    display: grid;
+    gap: 2.5rem;
+}
+
+.three-col-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.two-col-grid{
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    .three-col-grid{        
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .three-col-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .two-col-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+.card{
+    margin-top: 50px;
+    transition: all 0.5s ease;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-bg2);
+}
+
+.card-padding{
+    padding: 4.4rem 3.2rem;
+}
+
+.card img{
+    border-top-right-radius: var(--border-radius-lg);
+    border-top-left-radius: var(--border-radius-lg);
+}
+
+.icon{
+    width: 6.4rem;
+    height:6.4rem;
+    font-size: 5rem;
+    color: var(--color-bg);
+    border-radius: var(--border-radius);
+    background-color: var(--color-brand);
+    display: grid;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+#services .card p{
+    margin-bottom: 0;
+}
+
+.card:hover{
+    box-shadow: 0 0 0 0.3rem var(--color-brand);
+    transform: translateY(-0.5rem);
 }
 
 /* Work Experience CSS------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -710,5 +783,6 @@ ul .divider {
         padding-inline: 2.5rem;
     }
 }
+/* Professional Qualification ---------------------------------------------------------------------------------------------------------------------------------------- */
 
 
