@@ -100,7 +100,12 @@ section.full-height{
 }
 
 .section-title{
+    margin-top: 70px;
     text-align: center;
+}
+
+.section-title .section-icon{
+    color: var(--color-brand);
 }
 
 .section-line {
@@ -206,7 +211,7 @@ section.full-height{
     opacity: 1;
 }
 
-/* Sidebar */
+/* Sidebar------------------------------------------------------------------------------------------------------------------------------------------ */
 #sidebar {
     min-height: 100vh;
     width: 24rem;
@@ -357,7 +362,7 @@ ul .divider {
     margin-bottom: 3.4rem;
 }
 
-/* Work Experience CSS */
+/* Work Experience CSS------------------------------------------------------------------------------------------------------------------------------------------ */
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -545,3 +550,165 @@ ul .divider {
         left: -10px;
     }
 }
+
+/* Academic Qualification------------------------------------------------------------------------------------------------------------------------------------------ */
+.education-container{
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+}
+
+.card__container{
+    display: grid;
+    row-gap: 70px;
+}
+
+.card__article{
+    position: relative;
+    overflow: hidden;
+}
+
+.card__img{
+    width: 328px;
+    border-radius: var(--border-radius);
+}
+
+.card__data{
+    width: 280px;
+    background-color: #ececec;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: var(--border-radius);
+    position: absolute;
+    bottom: -20rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+.card__description{
+    display: block;
+    font-size: 14px;
+    margin-bottom: .25rem;
+    color: var(--color-bg2);
+    font-weight: 500;
+}
+
+.card__title{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-bg);
+    margin-bottom: .75rem;
+}
+
+.card__button{
+    background-color: var(--color-bg);
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.card__button:hover{
+    background-color: transparent;
+    border: 2px solid var(--color-bg);
+    color: var(--color-bg);
+}
+
+/* animate on hover */
+.card__article:hover .card__data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.card__article:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover){
+    animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data{
+    animation: remove-data 1s forwards;
+}
+
+@keyframes show-data{
+    50%{
+        transform: translateY(-20rem);
+    }
+    100%{
+        transform: translateY(-15rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-20rem);
+    }
+    50%{
+        transform: translateY(-25rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 340px){
+    .education-container{
+        margin-inline: 1rem;
+    }
+
+    .card__data{
+        width: 250px;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card__container{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .education-container{
+        height: 80vh;
+    }
+
+    .card__container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card__img{
+        width: 348px;
+    }
+
+    .card__data{
+        width: 316px;
+        padding-inline: 2.5rem;
+    }
+}
+
+
